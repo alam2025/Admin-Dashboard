@@ -8,10 +8,10 @@ let {onClose ,isOpen,overlay} = action
    <Modal isCentered isOpen={isOpen} onClose={onClose}>
       <ModalOverlay >
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>YA-SIN</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Custom backdrop filters!</Text>
+            <Text>Are you sure you want to logout!</Text>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>

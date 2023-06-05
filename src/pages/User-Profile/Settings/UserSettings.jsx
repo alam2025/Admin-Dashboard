@@ -115,7 +115,7 @@ const handleChange = () => {
           <label className="toggle">
       <input type="checkbox" checked={isChecked} onChange={handleChange} />
       <span className="slider"></span>
-      <span className="labels" data-on="24pm" data-off="12pm"></span>
+      <span className="labels" data-on="24hour" data-off="12hour"></span>
     </label>
           </div>
         </div>

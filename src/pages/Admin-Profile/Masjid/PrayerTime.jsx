@@ -67,9 +67,7 @@ class PrayerTime extends Component {
           </div>
         </div>
 
-        <div className="flex justify-end mt-4">
-          <button className="ripple">Update Profile</button>
-        </div>
+       
       </div>
     );
   }

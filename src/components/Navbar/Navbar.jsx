@@ -13,10 +13,10 @@ const Navbar = () => {
 },[pathname])
   return (
     <div className="bg-white w-full">
-      <div className="h-[72px] px-[36px]  max-w-[1920px] mx-auto">
+      <div className="h-[80px] px-[36px]  max-w-[1920px] mx-auto">
         <div className="flex justify-between items-center h-[80px]">
           <Link className='block' to='/'>
-            <img className="block w-[230px] -ml-10" src={logo} alt=""/>
+            <img className="block w-[290px] -ml-10 z-50"  src={logo} alt=""/>
           </Link>
          {/* {
           pathname !== "/" &&
