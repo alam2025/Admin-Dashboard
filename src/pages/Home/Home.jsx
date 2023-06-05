@@ -140,7 +140,7 @@ const Home = () => {
   };
 
   return (
-    <div style={{backgroundColor : activeBg}} className={`w-[988px] ${containerOpen ? '' : 'opacity-0'} transition-all ease-linear duration-700 h-[770px] rounded-[20px] my-auto ml-[292px] mt-[40px]  px-4 py-12 custom-shadow `}>
+    <div style={{backgroundColor : activeBg}} className={`w-[988px] ${containerOpen ? '' : 'opacity-0'} transition-all ease-linear duration-700 h-[770px] rounded-[20px] my-auto ml-[292px] mt-[35px]  px-4 py-12 custom-shadow `}>
       <Helmet>
         <title>Ya-Sin - Home </title>
       </Helmet>

@@ -1,4 +1,4 @@
-.clock {
+/* .clock {
   width: 230px;
   height: 230px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -105,10 +105,10 @@
 .clock .number6::before,
 .clock .number9::before,
 .clock .number12::before {
-  display: none; /* Added: Hide the lines for numbers 3, 6, 9, and 12 */
+  display: none; 
 } 
 .clock .hand {
-  /* --roation:0; */
+ 
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -116,7 +116,6 @@
   border-top-left-radius: 10px;
   background-color: black;
   transform-origin: bottom;
-  /* transform: translate(-50%) rotate(calc(var(--roation)* 1deg)); */
   z-index: 10;
 }
 
@@ -134,4 +133,16 @@
   width: 5px;
   height: 22%;
   background-color: black;
+} */
+
+
+.clock-class {
+	border-width: 5px !important;
+	border-color:white!important;
+	background-color: white;
+  scale: 110%;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
 }
+

@@ -25,7 +25,7 @@ const MyMasjidDetails = () => {
         <div className="  min-h-[350px] max-h-[350px]  ">
           <div className="flex flex-col gap-8 mt-7 w-[100%] ">
             {/* ---------Card Start------------- */}
-            <div className="flex justify-between  items-center ">
+            <div className="flex justify-between  items-center hover:bg-gray-100 hover:cursor-pointer hover:rounded-md duration-500">
               <div className="flex items-center gap-5 ">
                 <span>
                   <img
@@ -52,7 +52,7 @@ const MyMasjidDetails = () => {
             </div>
             {/* ---------Card End------------- */}
             {/* ---------Card Start------------- */}
-            <div className="flex justify-between  items-center ">
+            <div className="flex justify-between  items-center hover:bg-gray-100 hover:cursor-pointer hover:rounded-md duration-500">
               <div className="flex items-center gap-5">
                 <span>
                   <img
@@ -79,7 +79,7 @@ const MyMasjidDetails = () => {
             </div>
             {/* ---------Card End------------- */}
             {/* ---------Card Start------------- */}
-            <div className="flex justify-between  items-center ">
+            <div className="flex justify-between  items-center hover:bg-gray-100 hover:cursor-pointer hover:rounded-md duration-500">
               <div className="flex items-center gap-5">
                 <span>
                   <img
@@ -106,7 +106,7 @@ const MyMasjidDetails = () => {
             </div>
             {/* ---------Card End------------- */}
             {/* ---------Card Start------------- */}
-            <div className="flex justify-between  items-center ">
+            <div className="flex justify-between  items-center hover:bg-gray-100 hover:cursor-pointer hover:rounded-md duration-500">
               <div className="flex items-center gap-5">
                 <span>
                   <img
@@ -133,7 +133,7 @@ const MyMasjidDetails = () => {
             </div>
             {/* ---------Card End------------- */}
             {/* ---------Card Start------------- */}
-            <div className="flex justify-between  items-center ">
+            <div className="flex justify-between  items-center hover:bg-gray-100 hover:cursor-pointer hover:rounded-md duration-500">
               <div className="flex items-center gap-5">
                 <span>
                   <img

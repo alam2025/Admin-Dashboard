@@ -1,4 +1,4 @@
-.mobileclock {
+/* .mobileclock {
     width: 140px;
     height: 140px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -105,10 +105,9 @@
   .mobileclock .number6::before,
   .mobileclock .number9::before,
   .mobileclock .number12::before {
-    display: none; /* Added: Hide the lines for numbers 3, 6, 9, and 12 */
+    display: none; 
   } 
   .mobileclock .hand {
-    /* --roation:0; */
     position: absolute;
     bottom: 50%;
     left: 50%;
@@ -116,7 +115,6 @@
     border-top-left-radius: 10px;
     background-color: black;
     transform-origin: bottom;
-    /* transform: translate(-50%) rotate(calc(var(--roation)* 1deg)); */
     z-index: 10;
   }
   
@@ -135,4 +133,15 @@
     height: 22%;
     background-color: black;
   }
-  
+   */
+
+
+   .mobile-clock-class {
+    background-color: white;
+      border: none !important;
+    scale: 70%; 
+    margin: -25px !important;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.082) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.11) 0px 30px 60px -30px !important;
+  }

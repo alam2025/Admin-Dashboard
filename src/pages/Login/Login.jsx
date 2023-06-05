@@ -33,7 +33,7 @@ const Login = () => {
         localStorage.setItem('backgroundImageIndex', nextIndex.toString());
         return images[nextIndex];
       });
-    }, 100000);
+    }, 10000000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -48,53 +48,56 @@ const Login = () => {
         <title>Ya-Sin - Login </title>
       </Helmet>
      <div  className=" w-full min-h-screen ">
-      <div className="bg-white  w-[400px] h-[500px] border-[1px] border-[#DFE0EB] rounded-[8px]  absolute top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] flex flex-col justify-center items-center">
+      <div className="bg-white  w-[430px] h-[530px] border-[1px] border-[#DFE0EB] rounded-[8px]  absolute top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] flex flex-col justify-center items-center">
           
-        <div className="relative pt-14">
-   <div className="flex flex-col justify-center items-center ">
-           <img className="block w-[230px]  absolute -top-[60px]" src={icon} alt=""/>
+          
+
+        <div className="mt-32">
+        <img className=" z-50 w-[340px] mx-auto mt-[-230px] mb-2" src={icon} alt=""/>
+            <div className="flex flex-col justify-center items-center mt-[-60px] ">
+           
             {/* <img className="w-[48px] h-[48px] bg-black rounded-full" src={icon} alt="" /> */}
-            <h1 className="text-[#3385F0] font-Inter font-bold text-[36px] mt-2 mb-8">Login</h1>
+            {/* <h1 className="text-[#3385F0] font-Inter font-bold text-[36px] mt-2 mb-8">Login</h1> */}
            </div>
 
         <form className="flex flex-col gap-6">
         <div className="flex flex-col gap-1  mx-auto">
-          <span className="text-[#696969] font-Inter text-[12px] font-normal uppercase">
-            email
+          <span className="text-[#696969] font-Inter text-[16px] font-normal ">
+            Email
           </span>
           <input
             type="email"
             name="email"
             placeholder="Email address"
-            className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0  rounded-lg pl-3 focus:border-[#2C80FF] focus:outline-none text-sm"
+            className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0  rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
           />
         </div>
       
         <div className="relative flex flex-col gap-1 mx-auto">
-        <span className="text-[#696969] font-Inter text-[12px] font-normal uppercase">
-          password
+        <span className="text-[#696969] font-Inter text-[16px] font-normal ">
+          Password
           </span>
             <input
               type={showPassword ? "text" : "password"}
               name="Password"
               placeholder="Password"
-              className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0  rounded-lg pl-3 focus:border-[#2C80FF] focus:outline-none text-sm"
+              className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0  rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
             />
             <div onClick={()=>setShowPassword(!showPassword)}>
              {
               showPassword ? (
-                <BsEye className='absolute right-4 4 top-[38px] cursor-pointer text-[16px]'/>
+                <BsEye className='absolute right-4 4 top-[43px] cursor-pointer text-[16px]'/>
               ):
               (
-                <BsEyeSlash className='absolute right-4 4 top-[38px] cursor-pointer text-[16px]'/>
+                <BsEyeSlash className='absolute right-4 4 top-[43px] cursor-pointer text-[16px]'/>
               )
              }
             </div>
           </div>
 
-           <div className="flex justify-end mt-[-12px]">
-           <div className="flex  justify-between items-center w-[120px]">
-             <h1 className="text-[#696969] font-Inter font-medium text-[14px]">Reset</h1>
+           <div className="flex justify-end mt-[-12px] mr-4">
+           <div className="flex  justify-between items-center w-[180px] cursor-pointer">
+             <h1 className="text-[#696969] font-Inter font-medium text-[14px]">Forget password</h1>
               <h1 className="w-[0.5px] h-[26px] bg-[#A4A6B3]"></h1>
               <h1 className="text-[#3385F0] font-Inter font-medium text-[14px]">Sign Up</h1>
             </div>
@@ -102,7 +105,7 @@ const Login = () => {
 
 
            <div className="flex justify-center mt-2">
-           <button className="ripple !w-[150px] !h-[44px]">Log In</button>
+           <button className="ripple !w-[150px] !h-[44px] !rounded-[8px]">Log In</button>
            </div>
 
         </form>
