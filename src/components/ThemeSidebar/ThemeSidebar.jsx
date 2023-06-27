@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { Wheel, Chrome } from "@uiw/react-color";
 import edit from "../../assets/edit.svg";
-import traditinal from "../../assets/frame1.svg";
 import modern from "../../assets/frame2.svg";
 import { RxCross2 } from "react-icons/rx";
 import { useLocation } from "react-router-dom";
@@ -12,6 +11,7 @@ import { changeBgImage } from "../../redux/features/ThemeSlices/bgImageSlice.js"
 
 
 const ThemeSidebar = ({ utils }) => {
+  const [change, setChange] = useState(false)
   const [showDefault , setDefault] = useState("hidden")
   const { close, setClose } = utils;
   const [hex, setHex] = useState("#FFFFFF");
@@ -22,10 +22,9 @@ const ThemeSidebar = ({ utils }) => {
   useEffect(() => {
     dispatch(changeBg(hex));
   }, [hex]);
+  const activeBgImage = useSelector((state) => state.bgImage.activeBgImage);
 
-  const [uploadedImageUrl, setUploadedImageUrl] = useState(
-    "https://i.ibb.co/kKxqbS8/Group-260.png"
-  );
+  const [uploadedImageUrl, setUploadedImageUrl] = useState(activeBgImage);
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -34,11 +33,13 @@ const ThemeSidebar = ({ utils }) => {
       setUploadedImageUrl(e.target.result);
     };
     reader.readAsDataURL(file);
+    setChange(true)
   };
-
-  useEffect(() => {
+  
+  if (change) {
     dispatch(changeBgImage(uploadedImageUrl));
-  }, [uploadedImageUrl]);
+  }
+
 
   const handleClose = () => {
       setClose(true); 

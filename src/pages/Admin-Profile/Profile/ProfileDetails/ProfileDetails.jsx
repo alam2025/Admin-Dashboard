@@ -14,7 +14,7 @@ const ProfileDetails = () => {
         <title>Ya-Sin - Profile Details </title>
       </Helmet>
 
-<div>
+         <div>
           <div className="flex gap-10">
             <img
               className="w-[120px] h-[120px]  rounded-lg border border-red-600"
@@ -33,17 +33,15 @@ const ProfileDetails = () => {
 
               <label
                 htmlFor="pictureInput"
-                className="px-4 py-[6px] rounded-md bg-[#3385F0] text-white text-sm font-normal hover:cursor-pointer"
+                className="px-6 py-[10px] rounded-md bg-[#3385F0] text-white text-[16px] font-normal hover:cursor-pointer"
               >
                 Change Picture
               </label>
 
-              <button className="px-4 py-[4px] rounded-md bg-white text-sm text-[#FF5353] border-[1px] border-[#A4A6B3] font-normal">
-                Delete Picture
-              </button>
+              
             </div>
 
-            <div>
+            {/* <div>
               <h1 className="text-base font-normal text-[#696969] ml-24 mt-[-30px] mb-3">
                 Recent Profile Photos
               </h1>
@@ -79,7 +77,7 @@ const ProfileDetails = () => {
                   alt=""
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

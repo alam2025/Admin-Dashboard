@@ -51,7 +51,7 @@ class LivePrayerTime extends Component {
     });
 
     return (
-      <div className="w-[220px] h-[450px] bg-blue-50 mx-auto rounded-md animate__animated animate__fadeIn">
+      <div className="w-[220px] h-[450px] mx-auto rounded-md animate__animated animate__fadeIn">
         <MobileTopLable data={{ title: 'My Masjid', subtitle: 'Edit Your Masjid Prayer Time' }} />
 
         <div className="flex flex-col my-2">
@@ -59,8 +59,8 @@ class LivePrayerTime extends Component {
             <MobileClock secondRatio={secondRatio} minuteRatio={minuteRatio} hourRatio={hourRatio} />
           </div>
 
-          <div className="payer-time-shadow px-2 ">
-            <h1 className="text-[#04A999] font-Inter text-sm py-2">Daily Prayer Time</h1>
+          <div className="payer-time-shadow px-2 pb-8">
+            <h1 className="text-[#04A999] font-Inter text-[16px] text-center py-[5px]">Daily Prayer Time</h1>
 
             <div className="flex flex-col  gap-1 items-center">
               <div className="relative w-[205px] h-[35px] border-[1px] border-[#04A999] rounded-[6px]">

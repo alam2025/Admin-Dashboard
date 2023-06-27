@@ -29,6 +29,7 @@ const Root = () => {
             <Sidebar />
             <div className=" h-[100%] w-[100%] flex  gap-4 ">
              
+
               {close && (
                 <div
                   onClick={() => setClose(false)}
