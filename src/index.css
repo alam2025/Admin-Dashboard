@@ -166,11 +166,11 @@
   }
 }
 .rotating {
-  -webkit-animation: rotating 0.9s linear infinite;
-  -moz-animation: rotating 0.9s linear infinite;
-  -ms-animation: rotating 0.9s linear infinite;
-  -o-animation: rotating 0.9s linear infinite;
-  animation: rotating 0.9s linear infinite;
+  -webkit-animation: rotating 1.6s linear infinite;
+  -moz-animation: rotating 1.6s linear infinite;
+  -ms-animation: rotating 1.6s linear infinite;
+  -o-animation: rotating 1.6s linear infinite;
+  animation: rotating 1.6s linear infinite;
 }
 
 .custom-z {

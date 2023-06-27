@@ -25,8 +25,11 @@ import MyMasjidDetails from "../pages/User-Profile/MyMasjid/MyMasjidDetails/MyMa
 import MyMasjidList from "../pages/User-Profile/MyMasjid/MyMasjidList/MyMasjidList";
 import UserIndex from "../pages/User-Profile/Settings/UserIndex";
 import UserSettings from "../pages/User-Profile/Settings/UserSettings";
-import UserNotifications from "../pages/User-Profile/Notifications/UserNotifications";
 import UserNotificationIndex from "../pages/User-Profile/Notifications/UserNotificationIndex";
+import SignUp from "../pages/SignUp/SignUp";
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
+import ResetPassword from "../pages/ForgetPassword/ResetPassword";
 
 const routes = createBrowserRouter([
   {
@@ -172,6 +175,24 @@ const routes = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  }, 
+  
+  {
+    path: "/sign-up",
+    element: <SignUp />,
+  },
+  {
+    path: "/forget-password",
+    element: <ForgetPassword />,
+  },
+  {
+    path: "/reset-password/:email",
+    element: <ResetPassword />,
+  },
+  
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 
 ]);

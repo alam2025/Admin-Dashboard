@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ModalOverlay, Tooltip, useDisclosure } from "@chakra-ui/react";
-import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleContainerOpen, toggleIsOpen } from "../../redux/features/HomeSlices/homeDisplaySlice";
 import LogoutModal from "../LogoutCofirmation/LogoutModal";
-
+import belIcon from '../../assets/notification.svg';
 import menu from "../../assets/menu.svg";
 import managePost from "../../assets/managepost.svg";
 import email from "../../assets/Email.svg";
@@ -28,6 +27,9 @@ const Sidebar = () => {
     dispatch(toggleContainerOpen(!containerOpen));
   };
   
+  const userinformation = useSelector((state) => state?.userData?.userinfo  );
+
+
   const OverlayOne = () => (
     <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px) hue-rotate(90deg)" />
     );
@@ -61,30 +63,77 @@ const Sidebar = () => {
                 </Tooltip>
               </>
             )}
-            <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
-              <Link className="transition-all ease-linear duration-1000" to="/admin-profile">
-                <img className="w-36" src={user} alt="" />
-              </Link>
-            </Tooltip>
-            {pathname !== "/" && (
-              <>
-                <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
-                  <Link to="/create-masjid">
-                    <img className="w-36" src={mosque} alt="" />
-                  </Link>
-                </Tooltip>
-                <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
-                  <Link to="/create-favorites">
-                    <img className="w-36" src={favourite} alt="" />
-                  </Link>
-                </Tooltip>
-                <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
-                  <Link to="/admin-settings">
-                    <img className="w-36" src={settings} alt="" />
-                  </Link>
-                </Tooltip>
-              </>
-            )}
+
+
+             
+
+{
+  userinformation?.is_creator === true ? (
+    <>
+      <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
+        <Link className="transition-all ease-linear duration-1000" to="/admin-profile">
+          <img className="w-36" src={user} alt="" />
+        </Link>
+      </Tooltip>
+
+      {pathname !== "/" && (
+        <>
+          <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
+            <Link to="/create-masjid">
+              <img className="w-36" src={mosque} alt="" />
+            </Link>
+          </Tooltip>
+          <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
+            <Link to="/create-favorites">
+              <img className="w-36" src={favourite} alt="" />
+            </Link>
+          </Tooltip>
+          <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
+            <Link to="/admin-settings">
+              <img className="w-36" src={settings} alt="" />
+            </Link>
+          </Tooltip>
+        </>
+      )}
+    </>
+  ) : (
+    <>
+      <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
+        <Link className="transition-all ease-linear duration-1000" to="/user-profile">
+          <img className="w-36" src={user} alt="" />
+        </Link>
+      </Tooltip>
+
+      {pathname !== "/" && (
+        <>
+          <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
+            <Link to="/user-my-masjid">
+              <img className="w-36" src={mosque} alt="" />
+            </Link>
+          </Tooltip>
+          <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
+            <Link to="/user-create-favorites">
+              <img className="w-36" src={favourite} alt="" />
+            </Link>
+          </Tooltip> 
+          <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
+            <Link to="/user-notifications">
+              <img className="w-32" src={belIcon} alt="" />
+            </Link>
+          </Tooltip>
+          <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
+            <Link to="/user-settings">
+              <img className="w-32" src={settings} alt="" />
+            </Link>
+          </Tooltip>
+        </>
+      )}
+    </>
+  )
+}
+
+
+
             {pathname === "/" && (
               <div className="relative">
                 <Tooltip className="!bg-[#2C80FF]" label="Add" placement="right">
