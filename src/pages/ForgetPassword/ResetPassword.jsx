@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useResetPasswordMutation } from "../../redux/features/api/authApiSlice";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Swal from "sweetalert2";
@@ -68,6 +68,7 @@ const ResetPassword = () => {
                   name="email"
                   type="email"
                   value={email}
+                  disabled
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full py-3 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
                   placeholder="Enter email address"
