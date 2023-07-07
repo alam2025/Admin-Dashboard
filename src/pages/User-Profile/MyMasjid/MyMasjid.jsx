@@ -41,7 +41,7 @@ const MyMasjid = () => {
           <div className="w-[343px]  h-[582px] grid items-center rounded-[12px] overflow-hidden content-bg relative">
             <UserLivePreview>
               {
-                pathname === "/user-my-masjid" ? <LiveMyMasjidDetails/> : <LiveMyMasjidList/>
+                pathname === "/powerhouse/user-my-masjid" ? <LiveMyMasjidDetails/> : <LiveMyMasjidList/>
               }
                
                

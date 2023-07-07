@@ -46,10 +46,10 @@ const Root = () => {
               <div
                 className={`w-[100%] grid transition-all ease-linear duration-700  z-10`}
               >
-                {pathname === "/" && <Home />}
+                {pathname === "/powerhouse" && <Home />}
 
                 <div className="h-[850px] flex   items-center !ml-[-74px]">
-                  {pathname !== "/" && <Outlet />}
+                  {pathname !== "/powerhouse" && <Outlet />}
                 </div>
               </div>
             </div>

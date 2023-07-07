@@ -1,7 +1,5 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import { CiClock2 } from "react-icons/ci";
 import LivePreview from "../../../components/LivePreview/LivePreview";
 import LiveCreateMasjid from "./LivePreview/LiveCreateMasjid";
 import LivePrayerTime from "./LivePreview/LivePrayerTime";
@@ -43,7 +41,7 @@ const Masjid = () => {
            
           <LivePreview>
               {
-                pathname === "/create-masjid" ? <LiveCreateMasjid/> : <LivePrayerTime/>
+                pathname === "/powerhouse/create-masjid" ? <LiveCreateMasjid/> : <LivePrayerTime/>
               }
             </LivePreview>
           </div>

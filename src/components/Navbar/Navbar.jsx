@@ -9,6 +9,7 @@ const Navbar = () => {
   const {pathname} = useLocation()
   const [notification ,setNotification] = useState(false)
   const userinformation = useSelector((state) => state?.userData?.userinfo  );
+  // console.log(userinformation)
   useState(()=>{
     setNotification(false)
 },[pathname])
@@ -16,7 +17,7 @@ const Navbar = () => {
     <div className="bg-white w-full">
       <div className="h-[72px] px-[36px]  max-w-[1920px] mx-auto">
         <div className="flex justify-between items-center h-[80px]">
-          <Link className='block' to='/'>
+          <Link className='block' to='/powerhouse'>
             <img className="block w-[230px] -ml-10" src={logo} alt=""/>
           </Link>
          
@@ -34,11 +35,11 @@ const Navbar = () => {
             <div className="border-[2px] border-[#3385F0] p-[2px] rounded-full">
              {
               userinformation?.is_creator === true ? <>
-               <Link to='/admin-profile' className='cursor-pointer'><img className="h-[35px] w-[35px] rounded-full" src={userinformation?.image} alt=""/></Link>
+               <Link to='/powerhouse/admin-profile' className='cursor-pointer'><img className="h-[35px] w-[35px] rounded-full" src={userinformation?.image} alt=""/></Link>
               </>
               :
               <>
-               <Link to='/user-profile' className='cursor-pointer'><img className="h-[35px] w-[35px] rounded-full" src={userinformation?.image} alt=""/></Link>
+               <Link to='/powerhouse/user-profile' className='cursor-pointer'><img className="h-[35px] w-[35px] rounded-full" src={userinformation?.image} alt=""/></Link>
               </>
              }
             </div>

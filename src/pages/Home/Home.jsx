@@ -156,7 +156,7 @@ const Home = () => {
             type="text"
             name=""
             id=""
-            className="border-[0.5px] border-[#A4A6B3] rounded-full w-[430px] py-[8px] pl-5 outline-0"
+            className="border-[0.5px] border-[#A4A6B3] rounded-full w-[430px] py-[8px] pl-5 pr-10 outline-0"
             placeholder="Type to Search"
             
           />

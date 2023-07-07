@@ -34,48 +34,10 @@ const UserProfileDetails = () => {
                 Change Picture
               </label>
 
-              <button className="px-4 py-[4px] rounded-md bg-white text-sm text-[#FF5353] border-[1px] border-[#A4A6B3] font-normal">
-                Delete Picture
-              </button>
+             
             </div>
 
-            <div>
-              <h1 className="text-base font-normal text-[#696969] ml-24 mt-[-30px] mb-3">
-                Recent Profile Photos
-              </h1>
-              <div className="grid grid-cols-3 gap-4 ml-24">
-                <img
-                  className="w-[60px] h-[60px] rounded-lg"
-                  src="https://i.ibb.co/TPzV3rd/Rectangle-129.png"
-                  alt=""
-                />{" "}
-                <img
-                  className="w-[60px] h-[60px] rounded-lg"
-                  src="https://i.ibb.co/TPzV3rd/Rectangle-129.png"
-                  alt=""
-                />{" "}
-                <img
-                  className="w-[60px] h-[60px] rounded-lg"
-                  src="https://i.ibb.co/TPzV3rd/Rectangle-129.png"
-                  alt=""
-                />{" "}
-                <img
-                  className="w-[60px] h-[60px] rounded-lg"
-                  src="https://i.ibb.co/TPzV3rd/Rectangle-129.png"
-                  alt=""
-                />{" "}
-                <img
-                  className="w-[60px] h-[60px] rounded-lg"
-                  src="https://i.ibb.co/TPzV3rd/Rectangle-129.png"
-                  alt=""
-                />{" "}
-                <img
-                  className="w-[60px] h-[60px] rounded-lg"
-                  src="https://i.ibb.co/TPzV3rd/Rectangle-129.png"
-                  alt=""
-                />
-              </div>
-            </div>
+            
           </div>
         </div>
 

@@ -40,7 +40,7 @@ const UserFavorites = () => {
 
           <div className="w-[343px] h-[582px] grid items-center rounded-[12px] overflow-hidden content-bg relative animate__animated  animate__fadeIn">
             <UserLivePreview>
-              {pathname === "/user-create-favorites" ? (
+              {pathname === "/powerhouse/user-create-favorites" ? (
                 <UserLiveCreateFavourite />
               ) : (
                 < UserLiveMyFavourite/>

@@ -1,20 +1,14 @@
 import { Switch } from "@chakra-ui/react";
-import notification from "../../../assets/notification.svg";
+import belicon from "../../../assets/notification.svg";
 import tomezoon from "../../../assets/timezoon.svg";
 import country from "../../../assets/country.svg";
 import timeformet from "../../../assets/timeformet.svg";
 import {Menu,MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
-import SampleNofication from "../../../components/Notification/SampleNofication";
-import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import './Settings.css'
 const Settings = () => {
 
-  const {pathname} = useLocation()
-  const [notification ,setNotification] = useState(false)
-  useState(()=>{
-    setNotification(false)
-},[pathname])
+ 
 
 const [isChecked, setIsChecked] = useState(false);
 
@@ -30,7 +24,7 @@ const handleChange = () => {
       <div className="flex flex-col gap-8 mt-8">
         <div className="flex justify-between items-center">
           <div className="flex gap-3 items-center">
-            <img src={notification} alt="" />
+            <img className="" src={belicon} alt="" />
             <h1 className="text-[#696969] font-Inter font-normal text-[20px]">
               Push Notifications
             </h1>
@@ -122,9 +116,7 @@ const handleChange = () => {
 
        
       </div>
-      <button onClick={()=>setNotification(!notification)} className="ripple mt-16">Update Profile</button>
-
-     {notification &&  <SampleNofication actions={{notification , setNotification}}/>}
+   
     </div>
   );
 };

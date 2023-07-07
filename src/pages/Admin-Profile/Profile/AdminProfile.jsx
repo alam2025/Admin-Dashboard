@@ -41,7 +41,7 @@ const AdminProfile = () => {
 
           <div className="w-[343px]  h-[582px] grid items-center rounded-[12px] overflow-hidden content-bg relative">
             <LivePreview>
-              {pathname === "/admin-profile" ? (
+              {pathname === "/powerhouse/admin-profile" ? (
                 <LiveProfile />
               ) : (
                 <LiveChangePassword />

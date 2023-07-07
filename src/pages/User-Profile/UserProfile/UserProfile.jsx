@@ -1,6 +1,5 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { MdKeyboardArrowRight } from "react-icons/md";
 import UserLivePreview from "../../../components/UserLivePreview/UserLivePreview";
 import UserLiveProfileDetails from "./UserLivePreview/UserLiveProfileDetails";
 import UserLiveChangePassword from "./UserLivePreview/UserLiveChangePassword";
@@ -42,7 +41,7 @@ const UserProfile = () => {
           <div className="w-[343px]  h-[582px] grid items-center rounded-[12px] overflow-hidden content-bg relative">
             <UserLivePreview>
               {
-                pathname === "/user-profile" ? <UserLiveProfileDetails/> : <UserLiveChangePassword/>
+                pathname === "/powerhouse/user-profile" ? <UserLiveProfileDetails/> : <UserLiveChangePassword/>
               }
                
                

@@ -22,7 +22,7 @@ const ItemCard = ({ val }) => {
   return (
     <div
       style={isHomeDisplayOpen ? cardShowStyles : cardStyles}
-      className={`card card-${val.id} w-[159px] h-[144px] rounded-[20px] bg-white custom-shadow1 flex flex-col justify-center items-center relative !z-50 hover:bg-gray-200 hover:cursor-pointer text-[#2C80FF] `}
+      className={`card card-${val.id} w-[159px] h-[144px] rounded-[20px] bg-white custom-shadow1 flex flex-col justify-center items-center relative !z-50 hover:bg-blue-950 hover:cursor-pointer text-[#2C80FF] `}
     >
       {val.isFavourite ? (
         <AiFillStar className="text-[#FFC107] text-3xl font-extralight absolute top-2 right-2" />

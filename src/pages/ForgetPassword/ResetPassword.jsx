@@ -56,7 +56,7 @@ const ResetPassword = () => {
         <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow shadow-slate-300">
           <h1 className="text-3xl font-bold font-Inter">Reset your password</h1>
           <p className="text-slate-500">
-            Fill up the form to reset the password
+            Please check your email for OTP code
           </p>
 
           <form onSubmit={handleSubmit} className="my-4">

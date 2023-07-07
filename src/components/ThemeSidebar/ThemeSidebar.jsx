@@ -53,7 +53,7 @@ const ThemeSidebar = ({ utils }) => {
           ? `${showDefault}` // Apply the fadeOutRight animation class when closing
           : "animate__fadeInRight" // Apply the fadeInRight animation class when opening
       } animate__animated  content-bg transition-all font-Inter ease-out duration-700 bg-white px-6 ${
-        pathname === "/" ? "h-[770px]" : "h-[736px]"
+        pathname === "/powerhouse" ? "h-[770px]" : "h-[736px]"
       } absolute right-0 w-[270px] shadow-lg rounded-l-[20px] custom-z `}
     >
       {/* Component Header */}
