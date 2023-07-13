@@ -4,7 +4,7 @@ import {GiNetworkBars} from "react-icons/gi"
 import {BsBatteryHalf} from "react-icons/bs"
 const LivePreview = ({ children }) => {
   return (
-    <div className="relative">
+    <div className="relative mt-2">
       <img
         className="w-[341px] relative z-50"
         src="https://i.ibb.co/7jhvfGw/5cb0633d80f2cf201a4c3253-1.png"

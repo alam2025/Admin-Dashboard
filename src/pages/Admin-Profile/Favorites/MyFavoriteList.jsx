@@ -7,7 +7,7 @@ const MyFavoriteList = () => {
         <title>Ya-Sin - My Favourite List </title>
       </Helmet>
       <div className="overflow-y-auto absolute w-[665px] pr-14">
-        <div className="min-h-[420px] max-h-[420px] ">
+        <div className="2xl:min-h-[420px] 2xl:max-h-[420px] xl:min-h-[380px] xl:max-h-[380px] ">
           <div className="flex flex-col gap-8 mt-2 w-[100%]  ">
             {/* ---------Card Start------------- */}
             <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer hover:rounded-md duration-500">

@@ -55,13 +55,13 @@ const ResetPassword = () => {
       <div className="antialiased min-h-screen bg-slate-100 flex flex-col justify-center items-center">
         <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow shadow-slate-300">
           <h1 className="text-3xl font-bold font-Inter">Reset your password</h1>
-          <p className="text-slate-500">
-            Please check your email for OTP code
+          <p className="text-slate-500 text-[14px] w-[300px]">
+           Please enter the 4 digit of code sent to <span className="text-blue-700">{email}</span>
           </p>
 
           <form onSubmit={handleSubmit} className="my-4">
             <div className="flex flex-col space-y-5">
-              <label htmlFor="email">
+              {/* <label htmlFor="email">
                 <p className="font-medium text-slate-700 pb-2">Email address</p>
                 <input
                   id="email"
@@ -73,12 +73,11 @@ const ResetPassword = () => {
                   className="w-full py-3 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
                   placeholder="Enter email address"
                 />
-                 {/* Email Error */}
               {finalResponse?.error?.email && (
                 <p className="text-[14px] text-red-500 font-Inter font-bold">
                   {finalResponse?.error?.email[0]}
                 </p> )}
-              </label>
+              </label> */}
               
               <label htmlFor="otp">
                 <p className="font-medium text-slate-700 pb-2">OTP</p>
@@ -172,6 +171,7 @@ const ResetPassword = () => {
               >
                 <span>{isLoading ? "Resetting..." : "Reset Now"}</span>
               </button>
+                <p className="text-sm text-blue-700 text-center">Did not get a code? <button className="text-[#04A999]">Resend</button></p>
             </div>
 
        

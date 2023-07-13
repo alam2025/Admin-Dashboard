@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ModalOverlay, Tooltip, useDisclosure } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,15 +37,15 @@ const Sidebar = () => {
     const [overlay, setOverlay] = useState(<OverlayOne />);
   return (
     <div>
-      <div className="w-[80px] max-h-[770px] z-50 transition-all ease-linear duration-1000 relative p-4 min-h-max bg-[#ffffff] border rounded-full">
+      <div className="w-[80px] max-h-[770px] 2xl:mt-[0px] xl:mt-[-280px]  z-50 transition-all ease-linear duration-1000 relative p-4 min-h-max bg-[#ffffff] border rounded-full">
         <div className="flex flex-col">
           <div className="flex flex-col gap-7 items-center mt-6">
             {pathname === "/powerhouse" && (
               <>
-                <Tooltip className="!bg-[#2C80FF]" label="Menu" placement="right">
+                <Tooltip className="!bg-[#2C80FF] " label="Menu" placement="right">
                   <img
                     onClick={handleClick}
-                    className="w-36 cursor-pointer"
+                    className="2xl:w-36 xl:w-[36px] cursor-pointer duration-500 rounded "
                     src={menu}
                     alt=""
                   />
@@ -53,12 +53,12 @@ const Sidebar = () => {
 
                 <Tooltip className="!bg-[#2C80FF]" label="Manage Post" placement="right">
                   <Link to="/powerhouse">
-                    <img className="w-36" src={managePost} alt="" />
+                    <img className="2xl:w-36 xl:w-[36px] " src={managePost} alt="" />
                   </Link>
                 </Tooltip>
-                <Tooltip className="!bg-[#2C80FF]" label="Emails" placement="right">
+                <Tooltip className="!bg-[#2C80FF] " label="Emails" placement="right">
                   <Link to="/powerhouse">
-                    <img className="w-36" src={email} alt="" />
+                    <img className="2xl:w-36 xl:w-[36px] " src={email} alt="" />
                   </Link>
                 </Tooltip>
               </>
@@ -72,7 +72,7 @@ const Sidebar = () => {
     <>
       <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
         <Link className="transition-all ease-linear duration-1000" to="/powerhouse/admin-profile">
-          <img className="w-36" src={user} alt="" />
+          <img className="2xl:w-36 xl:w-[36px]" src={user} alt="" />
         </Link>
       </Tooltip>
 
@@ -80,17 +80,17 @@ const Sidebar = () => {
         <>
           <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
             <Link to="/powerhouse/create-masjid">
-              <img className="w-36" src={mosque} alt="" />
+              <img className="2xl:w-36 xl:w-[36px]" src={mosque} alt="" />
             </Link>
           </Tooltip>
           <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
             <Link to="/powerhouse/create-favorites">
-              <img className="w-36" src={favourite} alt="" />
+              <img className="2xl:w-36 xl:w-[36px]" src={favourite} alt="" />
             </Link>
           </Tooltip>
           <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
             <Link to="/powerhouse/admin-settings">
-              <img className="w-36" src={settings} alt="" />
+              <img className="2xl:w-36 xl:w-[36px]" src={settings} alt="" />
             </Link>
           </Tooltip>
         </>
@@ -100,7 +100,7 @@ const Sidebar = () => {
     <>
       <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
         <Link className="transition-all ease-linear duration-1000" to="/powerhouse/user-profile">
-          <img className="w-36" src={user} alt="" />
+          <img className="2xl:w-36 xl:w-[36px]" src={user} alt="" />
         </Link>
       </Tooltip>
 
@@ -108,22 +108,22 @@ const Sidebar = () => {
         <>
           <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
             <Link to="/powerhouse/user-my-masjid">
-              <img className="w-36" src={mosque} alt="" />
+              <img className="2xl:w-36 xl:w-[36px]" src={mosque} alt="" />
             </Link>
           </Tooltip>
           <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
             <Link to="/powerhouse/user-create-favorites">
-              <img className="w-36" src={favourite} alt="" />
+              <img className="2xl:w-36 xl:w-[36px]" src={favourite} alt="" />
             </Link>
           </Tooltip> 
           <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
             <Link to="/powerhouse/user-notifications">
-              <img className="w-32" src={belIcon} alt="" />
+              <img className="2xl:w-36 xl:w-[36px]" src={belIcon} alt="" />
             </Link>
           </Tooltip>
           <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
             <Link to="/powerhouse/user-settings">
-              <img className="w-32" src={settings} alt="" />
+              <img className="2xl:w-36 xl:w-[30px]" src={settings} alt="" />
             </Link>
           </Tooltip>
         </>
@@ -139,7 +139,7 @@ const Sidebar = () => {
                 <Tooltip className="!bg-[#2C80FF]" label="Add" placement="right">
                   <img
                    
-                    className="w-36 cursor-pointer"
+                    className="2xl:w-36 xl:w-[36px] cursor-pointer"
                     src={plus}
                     alt=""
                   />
@@ -156,7 +156,7 @@ const Sidebar = () => {
                   setOverlay(<OverlayOne />);
                   onOpen();
                 }}
-                className="w-36"
+                className="2xl:w-36 xl:w-[36px] xl:ml-1 2xl:ml-0"
                 src={logout}
                 alt=""
               />

@@ -1,48 +1,36 @@
 import { useState } from "react";
+import { BiPlus } from "react-icons/bi";
+import { HiOutlineCamera } from "react-icons/hi";
 
 const UserProfileDetails = () => {
-  const [profileImage, setProfileImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleImageUpload = (event) => {
+  const handleFileSelect = (event) => {
     const file = event.target.files[0];
-    setProfileImage(URL.createObjectURL(file));
-  };
+    const imageUrl = URL.createObjectURL(file);
+    setSelectedImage(imageUrl);
+  }
+
   return (
     <div className=" mt-14 ">
-
-<div>
-          <div className="flex gap-10">
-            <img
-              className="w-[120px] h-[120px]  rounded-lg border border-red-600"
-              src={profileImage || "https://i.ibb.co/W6bYSNC/Rectangle-128.png"}
-              alt=""
-            />
-
-            <div className="flex flex-col gap-2 mt-10">
-              <input
-                onChange={handleImageUpload}
-                type="file"
-                id="pictureInput"
-                accept="image/*"
-                style={{ display: "none" }}
-              />
-
-              <label
-                htmlFor="pictureInput"
-                className="px-4 py-[6px] rounded-md bg-[#3385F0] text-white text-sm font-normal hover:cursor-pointer"
-              >
-                Change Picture
-              </label>
-
-             
-            </div>
-
-            
-          </div>
+      <div>
+      <div>
+      <label htmlFor="file-input" className="relative w-[100px] h-[100px] border-2 border-[#04A999] rounded-full flex justify-center items-center mx-auto cursor-pointer">
+        {selectedImage ? (
+          <img src={selectedImage} alt="Selected" className="w-full h-full rounded-full" />
+        ) : (
+          <BiPlus className="text-2xl text-[#04A999]" />
+        )}
+        <div className="border border-[#04A999] w-[28px] h-[28px] rounded-full absolute right-[-8px] bottom-[5px] flex justify-center items-center">
+          <HiOutlineCamera className="text-xl text-[#04A999]" />
         </div>
+        <input id="file-input" type="file" className="hidden" onChange={handleFileSelect} />
+      </label>
+      <h1 className="text-center text-[#696969] font-Inter text-[16px] font-norma">Let’s upload a picture</h1>
+    </div>
+      </div>
 
       <form className="py-3 mt-4 flex flex-col gap-y-6">
-       
         <div className="flex gap-x-16 ">
           <div className="flex flex-col gap-2 ">
             <span className="text-[#696969] font-Inter text-[16px] font-normal">

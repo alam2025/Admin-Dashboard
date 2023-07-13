@@ -21,7 +21,7 @@ const CreateFavorites = () => {
       </div>
       <div className="overflow-y-auto absolute w-[665px] pr-14">
         <div className="  min-h-[350px] max-h-[350px]  ">
-          <div className="flex flex-col gap-8 mt-7 w-[100%] ">
+          <div className="flex flex-col gap-8 2xl:mt-7 xl:mt-5 w-[100%] ">
             {/* ---------Card Start------------- */}
             <div className="flex justify-between  items-center hover:bg-gray-100 hover:cursor-pointer hover:rounded-md duration-500">
               <div className="flex items-center gap-5 ">

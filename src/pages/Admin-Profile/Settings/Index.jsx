@@ -5,17 +5,17 @@ import LiveSettings from './LivePreview/LiveSettings'
 import { Helmet } from 'react-helmet-async'
 const Index = () => {
   return (
-    <div className="w-[1442px]  h-[738px] rounded-[20px] mx-auto my-auto bg-[#FFFFFF]  p-20 ">
+    <div className="2xl:w-[1442px] 2xl:h-[736px] xl:w-[1180px] xl:h-[560px] rounded-[20px] 2xl:mx-auto 2xl:my-auto bg-[#FFFFFF]  2xl:p-20 xl:p-5 xl:mt-[-270px] xl:ml-[120px] ">
     <Helmet>
         <title>Ya-Sin - Settings </title>
       </Helmet>
-    <div className="flex items-center  justify-center mt-8 animate__animated  animate__fadeIn">
-      <div className=" flex justify-between   gap-10  rounded-[12px]">
-        <div className="w-[550px] h-[555px] py-20  rounded-lg content-bg">
+    <div className="flex items-center  justify-center 2xl:mt-4 animate__animated  animate__fadeIn">
+      <div className=" flex justify-between   2xl:gap-[80px] xl:gap-12  rounded-[12px]">
+        <div className="2xl:w-[550px] 2xl:h-[580px] xl:w-[550px] xl:h-[520px] py-20  rounded-lg content-bg">
           <Settings/>
         </div>
 
-        <div  className="w-[343px] h-auto py-2 grid items-center rounded-[12px] overflow-hidden content-bg relative">
+        <div  className="2xl:w-[343px]  2xl:h-[582px] xl:h-[520px] grid items-center rounded-[12px] overflow-hidden content-bg relative">
         <LivePreview>
           <LiveSettings/>
         </LivePreview>

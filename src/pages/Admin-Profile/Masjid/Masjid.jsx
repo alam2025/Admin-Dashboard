@@ -6,10 +6,10 @@ import LivePrayerTime from "./LivePreview/LivePrayerTime";
 const Masjid = () => {
   const { pathname } = useLocation();
   return (
-    <div className="w-[1442px] h-[736px] rounded-[20px] mx-auto my-auto bg-[#FFFFFF]  p-20 ">
+    <div className="2xl:w-[1442px] 2xl:h-[736px] xl:w-[1180px] xl:h-[560px] rounded-[20px] 2xl:mx-auto 2xl:my-auto bg-[#FFFFFF]  2xl:p-20 xl:p-5 xl:mt-[-270px] xl:ml-[120px] ">
       <div className="flex items-center justify-center animate__animated  animate__fadeIn">
         <div className="flex justify-center gap-16  rounded-[12px] ">
-          <div className=" w-[756px]   h-[582px] px-14 py-10 rounded-lg content-bg">
+          <div className="2xl:w-[756px] 2xl:h-[582px] xl:h-[520px] 2xl:px-14 xl:px-10 2xl:py-10 xl:py-8 rounded-lg content-bg">
             <Tabs>
               <TabList display="flex" justifyContent="space-between">
                 <Tab color="#3385F0" paddingX="0">
@@ -37,7 +37,7 @@ const Masjid = () => {
             </Tabs>
           </div>
 
-          <div className="w-[343px] h-[582px] grid items-center rounded-[12px] overflow-hidden content-bg relative">
+          <div className="2xl:w-[343px]  2xl:h-[582px] xl:h-[520px] grid items-center rounded-[12px] overflow-hidden content-bg relative">
            
           <LivePreview>
               {

@@ -6,6 +6,8 @@ import timeformet from "../../../assets/timeformet.svg";
 import {Menu,MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
 import { useState } from "react";
 import './Settings.css'
+
+
 const Settings = () => {
 
  
@@ -43,7 +45,7 @@ const handleChange = () => {
             </h1>
           </div>
 
-          <div>
+          <div className="">
             <Menu>
               <MenuButton className="!text-[#414141] !font-Inter !font-normal !text-[16px]">
                 Asia/Dhaka

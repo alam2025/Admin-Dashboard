@@ -129,9 +129,9 @@ const datas = [
 ];
 
 const Home = () => {
-  const containerOpen = useSelector((state) => state.homeDisplay.containerOpen);
-  const isHomeDisplayOpen = useSelector((state) => state.homeDisplay.isOpen);
-  const activeBg = useSelector((state) => state.bgColor.activeBg);
+  const containerOpen = useSelector((state) => state?.homeDisplay?.containerOpen);
+  const isHomeDisplayOpen = useSelector((state) => state?.homeDisplay?.isOpen);
+  const activeBg = useSelector((state) => state?.bgColor?.activeBg);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -140,12 +140,12 @@ const Home = () => {
   };
 
   return (
-    <div style={{backgroundColor : activeBg}} className={`w-[988px] ${containerOpen ? '' : 'opacity-0'} transition-all ease-linear duration-700 h-[770px] rounded-[20px] my-auto ml-[292px] mt-[35px]  px-4 py-12 custom-shadow `}>
+    <div style={{backgroundColor : activeBg}} className={`w-[988px] ${containerOpen ? '' : 'opacity-0'} transition-all ease-linear duration-700 2xl:h-[770px] xl:h-[510px] rounded-[20px] my-auto 2xl:ml-[292px] xl:ml-[140px]  mt-[35px]  px-4 py-12 custom-shadow `}>
       <Helmet>
         <title>Ya-Sin - Home </title>
       </Helmet>
       {/* Component Header */}
-      <div className="mb-12 flex items-center relative">
+      <div className="2xl:mb-12 xl:mb-6 flex items-center relative">
         <TiDelete
           onClick={handleClick}
           className="text-4xl absolute right-12 text-red-500 cursor-pointer"
@@ -156,7 +156,7 @@ const Home = () => {
             type="text"
             name=""
             id=""
-            className="border-[0.5px] border-[#A4A6B3] rounded-full w-[430px] py-[8px] pl-5 pr-10 outline-0"
+            className="border-[0.5px] border-[#A4A6B3] rounded-full w-[430px] py-[8px]  pl-5 pr-10 outline-0"
             placeholder="Type to Search"
             
           />
@@ -167,7 +167,7 @@ const Home = () => {
       </div>
 
       {/* Component Body */}
-      <div className={`grid justify-items-center rounded-md grid-cols-4 overflow-hidden max-h-[595px] py-2 gap-y-[72px] gap-x-0 ${containerOpen && 'overflow-y-auto'}`}>
+      <div className={`grid justify-items-center rounded-md grid-cols-4 overflow-hidden 2xl:max-h-[595px] xl:max-h-[360px]  py-2 2xl:gap-y-[72px] xl:gap-y-[55px] xl:px-12 2xl:px-0 gap-x-0 ${containerOpen && 'overflow-y-auto'}`}>
         {datas?.map((val) => (
           <ItemCard key={val.id} val={val} />
         ))}
