@@ -24,7 +24,7 @@ const NotificationsMenu = ({ actions }) => {
       </div>
       <div
         className={`min-w-[320px] max-w-[320px] min-h-[250px]  ${
-          expanded ? "h-[600px] overflow-y-auto" : "h-[300px] overflow-hidden"
+          expanded ? "2xl:h-[600px] xl:h-[400px] overflow-y-auto" : "2xl:h-[300px] xl:h-[300px] overflow-hidden"
         }  transition-all duration-500 `}
       >
         {/* Component Header Start*/}

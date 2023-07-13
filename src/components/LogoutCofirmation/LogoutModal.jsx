@@ -1,36 +1,46 @@
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react'
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text
+} from "@chakra-ui/react";
 import Cookies from "js-cookie";
-import {  useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { removeUserData } from "../../redux/features/UserSlices/UserSlices";
 
-const LogoutModal = ({action}) => {
-  const navigate = useNavigate()
-   
-let {onClose ,isOpen,overlay} = action
+const LogoutModal = ({ action }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  let { onClose, isOpen, overlay } = action;
 
-const handleLogout = () => {
-  Cookies.remove("token");
-  navigate('/login')
-console.log('logout Done');
-onClose()
-}
+  const handleLogout = () => {
+    Cookies.remove("token");
+    dispatch(removeUserData());
+    navigate("/login");
+    onClose();
+  };
   return (
-   <Modal isCentered isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay >
+    <Modal isCentered isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay>
         <ModalContent>
-          <ModalHeader>
-            <p className='text-[14px] font-Inter'>Wellcome to YA-SIN Dashboard</p>
-</ModalHeader>
+          <ModalHeader>Logout</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <p className='text-[25px] font-Inter font-bold text-black'>Are you sure to Logout ?</p>
+            <Text>Are you sure to Logout ?</Text>
           </ModalBody>
           <ModalFooter>
-            <Button bgColor={'blue.300'} color='#FFFFFF' onClick={handleLogout}>Yes</Button>
+            <Button onClick={handleLogout}>Yes</Button>
           </ModalFooter>
         </ModalContent>
-        </ModalOverlay>
-      </Modal>
-  )
-}
+      </ModalOverlay>
+    </Modal>
+  );
+};
 
-export default LogoutModal
+export default LogoutModal;

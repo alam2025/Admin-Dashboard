@@ -14,7 +14,7 @@ const CreateMasjid = () => {
       <Helmet>
         <title>Ya-Sin - Create Masjid </title>
       </Helmet>
-      <form className=" mt-8 flex flex-col gap-y-6">
+      <form className="mt-8 flex flex-col 2xl:gap-y-6 xl:gap-y-4">
         <div>
           <div className="flex justify-between items-center gap-x-16 ">
             <div className="relative">
@@ -89,7 +89,7 @@ const CreateMasjid = () => {
           </div>
         </div>
 
-        <div className="flex justify-end mt-5">
+        <div className="flex justify-end 2xl:mt-5 xl:mt-3">
           <button className="ripple">Update Profile</button>
         </div>
       </form>

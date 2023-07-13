@@ -99,7 +99,8 @@ const PrayerTimes = () => {
       ))}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalOverlay />
-        <ModalContent marginTop='370px'>
+        <ModalContent>
+        {/* marginTop='370px' */}
           <ModalHeader>
             Select Prayer Time: {selectedPrayerIndex !== null ? prayerTimes[selectedPrayerIndex].name : ''}
           </ModalHeader>

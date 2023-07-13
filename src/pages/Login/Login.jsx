@@ -64,11 +64,11 @@ const Login = () => {
       Cookies.set("token", response?.data?.data?.token);
     }
 
-    if (response.data?.data?.status) {
-      if (response.data?.data?.user.is_creator) {
-        navigate("/");
+    if (response?.data?.data?.status) {
+      if (response?.data?.data?.user?.is_creator) {
+        navigate("/powerhouse");
       } else {
-        navigate("/user-profile");
+        navigate("/powerhouse/user-profile");
       }
     } else {
       navigate("/login");
@@ -152,7 +152,7 @@ const Login = () => {
 
               <div className="flex justify-end mt-[-12px] w-[320px]">
                 <div className="flex  justify-between items-center w-[170px]">
-                  <Link to='/forget-password' className="text-[#696969] font-Inter font-medium text-[14px]">
+                  <Link to='/powerhouse/forget-password' className="text-[#696969] font-Inter font-medium text-[14px]">
                     Forget Password
                   </Link>
                   <h1 className="w-[0.5px] h-[26px] bg-[#A4A6B3]"></h1>

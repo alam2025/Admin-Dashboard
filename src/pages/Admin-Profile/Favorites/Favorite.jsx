@@ -6,10 +6,10 @@ import LiveMyFavourite from "./LivePreview/LiveMyFavourite";
 const Favorite = () => {
   const { pathname } = useLocation();
   return (
-    <div className="w-[1442px] h-[736px] rounded-[20px] mx-auto my-auto bg-[#FFFFFF]  p-20 ">
+    <div className="2xl:w-[1442px] 2xl:h-[736px] xl:w-[1180px] xl:h-[560px] rounded-[20px] 2xl:mx-auto 2xl:my-auto bg-[#FFFFFF]  2xl:p-20 xl:p-5 xl:mt-[-270px] xl:ml-[120px] ">
       <div className="flex   h-[100%]  ">
         <div className=" flex  rounded-[12px]  mx-auto">
-          <div className=" w-[756px]   h-[582px] overflow-hidden py-10 rounded-lg content-bg mr-[77px] animate__animated  animate__fadeIn">
+          <div className=" 2xl:w-[756px]   2xl:h-[582px] xl:w-[756px] xl:h-[520px] 2xl:overflow-hidden xl:overflow-hidden 2xl:py-10 xl:py-6 rounded-lg content-bg mr-[77px] animate__animated  animate__fadeIn">
             <Tabs className="!px-14">
               <TabList display="flex" justifyContent="space-between">
                 <Tab color="#3385F0" paddingX="0">
@@ -37,9 +37,9 @@ const Favorite = () => {
             </Tabs>
           </div>
 
-          <div className="w-[343px] h-[582px] grid items-center rounded-[12px] overflow-hidden content-bg relative animate__animated  animate__fadeIn">
+          <div className="2xl:w-[343px] 2xl:h-[582px] xl:w-[343px] xl:h-[530px] xl:ml-[-30px] 2xl:ml-0 grid items-center rounded-[12px] overflow-hidden content-bg relative animate__animated  animate__fadeIn">
             <LivePreview>
-              {pathname === "/create-favorites" ? (
+              {pathname === "/powerhouse/create-favorites" ? (
                 <LiveCreateFavourite />
               ) : (
                 < LiveMyFavourite/>

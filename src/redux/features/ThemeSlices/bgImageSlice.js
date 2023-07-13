@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    activeBgImage: 'https://i.ibb.co/bdywfSP/Dream-Shaper-v5-Photo-islamic-Evening-with-Sun-Light-Backgroun-0.webp',
+    activeBgImage: 'https://i.ibb.co/kBJ9yZD/rashid-So-NOh-DHKIc-unsplash.jpg',
 }
 
 const bgImageSlice = createSlice({

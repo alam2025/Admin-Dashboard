@@ -9,10 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeBg } from "../../redux/features/ThemeSlices/bgColorSlice";
 import { changeBgImage } from "../../redux/features/ThemeSlices/bgImageSlice.js";
 
-
 const ThemeSidebar = ({ utils }) => {
-  const [change, setChange] = useState(false)
-  const [showDefault , setDefault] = useState("hidden")
+  const [change, setChange] = useState(false);
+  const [showDefault, setDefault] = useState("hidden");
   const { close, setClose } = utils;
   const [hex, setHex] = useState("#FFFFFF");
   const [picker, setPicker] = useState(false);
@@ -33,17 +32,16 @@ const ThemeSidebar = ({ utils }) => {
       setUploadedImageUrl(e.target.result);
     };
     reader.readAsDataURL(file);
-    setChange(true)
+    setChange(true);
   };
-  
+
   if (change) {
     dispatch(changeBgImage(uploadedImageUrl));
   }
 
-
   const handleClose = () => {
-      setClose(true); 
-      setDefault("animate__fadeOutRight")
+    setClose(true);
+    setDefault("animate__fadeOutRight");
   };
 
   return (
@@ -53,77 +51,75 @@ const ThemeSidebar = ({ utils }) => {
           ? `${showDefault}` // Apply the fadeOutRight animation class when closing
           : "animate__fadeInRight" // Apply the fadeInRight animation class when opening
       } animate__animated  content-bg transition-all font-Inter ease-out duration-700 bg-white px-6 ${
-        pathname === "/" ? "h-[770px]" : "h-[736px]"
-      } absolute right-0 w-[270px] shadow-lg rounded-l-[20px] custom-z `}
+        pathname === "/powerhouse" ? "h-[770px] xl:mt-[-12px]" : "h-[736px] xl:mt-[-95px] 2xl:mt-0"
+      } absolute 2xl:right-10 xl:right-0 2xl:w-[230px] xl:w-[190px] shadow-lg rounded-l-[20px] custom-z `}
     >
       {/* Component Header */}
       <div className="mt-4 flex gap-2">
         <button
           onClick={handleClose} // Call the handleClose function when the close button is clicked
-          className="text-[#2f80ed] text-4xl hover:text-red-500 duration-300"
+          className="text-[#2f80ed] 2xl:text-4xl xl:text-2xl hover:text-red-500 duration-300"
         >
           <RxCross2 />
         </button>
       </div>
 
-      {/* Rest of the component */}
       {/* ... */}
       {/* Component Body */}
       <div className="mt-6 flex flex-col items-center gap-3 ">
         {/* ---------------------------------------------- */}
         <div>
-          <h3 className=" text-gray-600 font-Inter my-2 text-xl">
+          <h3 className=" text-gray-600 font-Inter my-2 xl:text-[12px] 2xl:text-[18px]">
             Select Theme
           </h3>
           {/* File Upload Button */}
           <label
-            className="file-upload cursor-pointer flex justify-center gap-4 max-w-max items-center "
+            className="file-upload  cursor-pointer flex justify-center gap-4 max-w-max xl:w-[150px] 2xl:w-[180px] xl:h-[40px] 2xl:h-[50px] items-center "
             htmlFor="theme"
           >
             <AiOutlineCloudUpload className="inline-block text-xl" />{" "}
-            <span>Upload Theme</span>
+            <span className="2xl:text-[16px] xl:text-[12px]">Upload Theme</span>
           </label>
           <input className="hidden" type="file" name="theme" id="theme" />
         </div>
         {/* ---------------------------------------------- */}
         <div>
-      <h3 className="text-gray-600 font-Inter my-2">Select Wallpaper</h3>
-      {/* Wallpaper File Upload Button */}
-      <label
-        className="file-upload cursor-pointer flex justify-center gap-4 max-w-max items-center"
-        htmlFor="wallpaper"
-      >
-        <AiOutlineCloudUpload className="inline-block text-xl" />
-        <span>Upload Image</span>
-      </label>
-      <input
-  className="hidden"
-  type="file"
-  name="wallpaper"
-  id="wallpaper"
-  accept="image/*"
-  onChange={handleFileUpload}
-/>
-     
-    </div>
+          <h3 className="text-gray-600 font-Inter my-2 xl:text-[12px] 2xl:text-[18px]">Select Wallpaper</h3>
+          {/* Wallpaper File Upload Button */}
+          <label
+            className="file-upload  cursor-pointer flex justify-center gap-4 max-w-max xl:w-[150px] 2xl:w-[180px] xl:h-[40px] 2xl:h-[50px] items-center "
+            htmlFor="wallpaper"
+          >
+            <AiOutlineCloudUpload className="inline-block text-xl" />
+            <span className="2xl:text-[16px] xl:text-[12px]">Upload Image</span>
+          </label>
+          <input
+            className="hidden"
+            type="file"
+            name="wallpaper"
+            id="wallpaper"
+            accept="image/*"
+            onChange={handleFileUpload}
+          />
+        </div>
         {/* ---------------------------------------------- */}
         <div>
-          <h3 className=" text-gray-600 font-Inter my-2 text-base">
+          <h3 className=" text-gray-600 font-Inter my-2 2xl:text-base xl:text-[12px] xl:ml-3 2xl:ml-4">
             Select Background Color
           </h3>
           <div>
             <Wheel
-              className="!inline-block !w-40 overflow-hidden !h-40 !rounded-full !ml-2"
+              className="!inline-block 2xl:!w-40 xl:!w-[140px] xl:!h-[140px] overflow-hidden 2xl:!h-40 !rounded-full 2xl:!ml-4 xl:!ml-2"
               color={hex}
               onChange={(color) => {
                 setHex(color.hex);
               }}
             />
           </div>
-          <div className="flex items-center  gap-6 my-2 ml-6">
+          <div className="flex items-center  2xl:gap-6 xl:gap-3 my-2 2xl:ml-6 xl:ml-2">
             <div
               style={{ backgroundColor: hex }}
-              className="w-10 h-10 ring-4 ring-gray-200 rounded-lg"
+              className="2xl:w-10 2xl:h-10 xl:w-6 xl:h-6 ring-4 ring-gray-200 rounded-lg"
             ></div>
             <div className="w-24 bg-gray-200 p-2 text-center  rounded-lg border-2">
               {hex}
@@ -149,7 +145,7 @@ const ThemeSidebar = ({ utils }) => {
           {/* Selector */}
           <div className="flex justify-center">
             <div className="object-cover rounded-md overflow-clip cursor-pointer">
-              <img className="w-[180px] h-[100px]" src={modern} alt="" />
+              <img className="2xl:w-[180px] 2xl:h-[100px] xl:w-[140px] xl:h-[50px]" src={modern} alt="" />
             </div>
           </div>
         </div>

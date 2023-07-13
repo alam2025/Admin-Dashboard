@@ -22,7 +22,7 @@ const ForgetPassword = () => {
     icon: "success",
     confirmButtonText: "Continue",
   }).then(() => {
-    navigate(`/reset-password/${email}`)
+    navigate(`/powerhouse/reset-password/${email}`)
   });
 
  }

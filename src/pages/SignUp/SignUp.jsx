@@ -12,6 +12,8 @@ import login4 from "../../assets/login/login-4.png";
 import login5 from "../../assets/login/login-5.png";
 import { useRef } from "react";
 import Loader from "../../components/Loader/Loader";
+import { BiPlus } from "react-icons/bi";
+import { HiOutlineCamera } from "react-icons/hi";
 
 const SignUp = () => {
   const [actionRegister, { isError, isLoading, isSuccess, data }] =
@@ -22,6 +24,14 @@ const SignUp = () => {
   const fileInputRef = useRef(null);
   const [backgroundImage, setBackgroundImage] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  // const [selectedImage, setSelectedImage] = useState(null);
+
+  // const handleFileSelect = (event) => {
+  //   const file = event.target.files[0];
+  //   const imageUrl = URL.createObjectURL(file);
+  //   setSelectedImage(imageUrl);
+  // };
 
   useEffect(() => {
     const images = [login1, login2, login3, login4, login5];
@@ -46,6 +56,7 @@ const SignUp = () => {
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     setSelectedImage(URL.createObjectURL(file));
+    // setSelectedImage(imageUrl);
   };
 
   const handleSubmit = (e) => {
@@ -91,10 +102,10 @@ const SignUp = () => {
         <title>Ya-Sin - SignUp</title>
       </Helmet>
       <div className="w-full min-h-screen flex justify-center items-center">
-        <div className="bg-white w-[430px] pb-8 border-[1px] border-[#DFE0EB] rounded-[8px] flex flex-col items-center">
+        <div className="bg-white w-[430px] 2xl:pb-8 xl:pb-4 border-[1px] border-[#DFE0EB] rounded-[8px] flex flex-col items-center">
           <div className="">
             <img
-              className="z-50 w-[340px] mt-[-60px] mx-auto mb-1"
+              className="z-50 2xl:w-[340px] xl:w-[260px] mt-[-60px] mx-auto mb-1"
               src={icon}
               alt=""
             />
@@ -103,7 +114,47 @@ const SignUp = () => {
               onSubmit={handleSubmit}
               className="flex flex-col gap-[5px] mt-[-80px]"
             >
-              <div className="relative">
+              <div className="xl:ml-[-240px] 2xl:ml-[0px]">
+                <label
+                  htmlFor="file-input"
+                  className="relative 2xl:w-[100px] 2xl:h-[100px] xl:w-[70px] h-[70px] border-2 border-[#9C9C9C] rounded-full flex justify-center items-center mx-auto cursor-pointer"
+                >
+                  {selectedImage ? (
+                    <img
+                      src={selectedImage}
+                      alt="Selected"
+                      className="w-full h-full rounded-full"
+                    />
+                  ) : (
+                    <BiPlus className="text-2xl text-[#9C9C9C]" />
+                  )}
+                  <div className=" w-[28px] h-[28px] rounded-full absolute right-[-8px] bottom-[5px] flex justify-center items-center">
+                    <HiOutlineCamera className="text-xl" />
+                  </div>
+                  <input
+                    id="file-input"
+                    className="hidden"
+                    ref={fileInputRef}
+                    type="file"
+                    onChange={handleImageUpload}
+                    accept="image/*"
+                  />
+                 
+                </label>
+                <h1 className="text-center font-Inter 2xl:ml-0 xl:ml-[60px] xl:text-sm">
+                  Let’s upload a picture
+                </h1>
+                
+               
+              </div>
+              {data?.data?.error?.image && (
+                <p className="text-[14px] text-red-500 ml-4 font-Inter font-bold">
+                  {data?.data?.error?.image[0]}
+                </p>
+              )}
+             
+
+              {/* <div className="relative">
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -118,14 +169,12 @@ const SignUp = () => {
                   }
                   alt=""
                 />
-                 {/* Image Error */}
               {data?.data?.error?.image && (
                 <p className="text-[14px] text-red-500 ml-4 font-Inter font-bold">
                   {data?.data?.error?.image[0]}
                 </p>
               )}
-              </div>
-             
+              </div> */}
 
               <div className="flex flex-col gap-1 mx-auto">
                 <span className="text-[#696969] font-Inter text-[16px] font-normal">
@@ -135,17 +184,16 @@ const SignUp = () => {
                   type="text"
                   name="name"
                   placeholder="Enter your name"
-                  className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+                  className="w-[316px] 2xl:h-12 xl:h-9 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
                 />
                 {/* Name Error */}
-              {data?.data?.error?.name && (
-                <p className="text-[14px] text-red-500 font-Inter font-bold">
-                  {data?.data?.error?.name[0]}
-                </p>
-              )}
-
+                {data?.data?.error?.name && (
+                  <p className="text-[14px] text-red-500 font-Inter font-bold">
+                    {data?.data?.error?.name[0]}
+                  </p>
+                )}
               </div>
-              
+
               <div className="flex flex-col gap-1 mx-auto">
                 <span className="text-[#696969] font-Inter text-[16px] font-normal">
                   Email
@@ -154,16 +202,15 @@ const SignUp = () => {
                   type="email"
                   name="email"
                   placeholder="Email address"
-                  className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+                  className="w-[316px] 2xl:h-12 xl:h-9 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
                 />
-                 {/* Email Error */}
-              {data?.data?.error?.email && (
-                <p className="text-[14px] text-red-500 font-Inter font-bold">
-                  {data?.data?.error?.email[0]}
-                </p>
-              )}
+                {/* Email Error */}
+                {data?.data?.error?.email && (
+                  <p className="text-[14px] text-red-500 font-Inter font-bold">
+                    {data?.data?.error?.email[0]}
+                  </p>
+                )}
               </div>
-             
 
               <div className="relative flex flex-col gap-1 mx-auto">
                 <span className="text-[#696969] font-Inter text-[16px] font-normal">
@@ -173,23 +220,23 @@ const SignUp = () => {
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
-                  className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+                  className="w-[316px] 2xl:h-12 xl:h-9 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
                 />
                 <div onClick={() => setShowPassword(!showPassword)}>
                   {showPassword ? (
-                    <BsEye className="absolute right-4 4 top-[43px] cursor-pointer text-[16px]" />
+                    <BsEye className="absolute right-4 4 2xl:top-[43px] xl:top-[38px] cursor-pointer text-[16px]" />
                   ) : (
-                    <BsEyeSlash className="absolute right-4 4 top-[43px] cursor-pointer text-[16px]" />
+                    <BsEyeSlash className="absolute right-4 4 2xl:top-[43px] xl:top-[38px] cursor-pointer text-[16px]" />
                   )}
                 </div>
-                 {/* Password Error */}
-              {data?.data?.error?.password && (
-                <p className="text-[14px] text-red-500 font-Inter font-bold">
-                  {data?.data?.error?.password[0]}
-                </p>
-              )}
+                {/* Password Error */}
+                {data?.data?.error?.password && (
+                  <p className="text-[14px] text-red-500 font-Inter font-bold">
+                    {data?.data?.error?.password[0]}
+                  </p>
+                )}
               </div>
-             
+
               <div className="relative flex flex-col gap-1 mx-auto">
                 <span className="text-[#696969] font-Inter text-[16px] font-normal">
                   Confirm Password
@@ -198,26 +245,24 @@ const SignUp = () => {
                   type={showConfirmPassword ? "text" : "password"}
                   name="confirmPassword"
                   placeholder="Confirm Password"
-                  className="w-[316px] h-12 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+                  className="w-[316px] 2xl:h-12 xl:h-9 border-[1px] border-[#F0F1F7] bg-[#FCFDFE] outline-0 rounded-lg pl-3 focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
                 />
                 <div
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
                   {showConfirmPassword ? (
-                    <BsEye className="absolute right-4 4 top-[43px] cursor-pointer text-[16px]" />
+                    <BsEye className="absolute right-4 4 2xl:top-[43px] xl:top-[38px] cursor-pointer text-[16px]" />
                   ) : (
-                    <BsEyeSlash className="absolute right-4 4 top-[43px] cursor-pointer text-[16px]" />
+                    <BsEyeSlash className="absolute right-4 4 2xl:top-[43px] xl:top-[38px] cursor-pointer text-[16px]" />
                   )}
                 </div>
-                 {/* Password Mismatch Error */}
-              {passwordError && (
-                <p className="text-[14px] text-red-500 font-Inter font-bold">
-                  {passwordError}
-                </p>
-              )}
+                {/* Password Mismatch Error */}
+                {passwordError && (
+                  <p className="text-[14px] text-red-500 font-Inter font-bold">
+                    {passwordError}
+                  </p>
+                )}
               </div>
-
-             
 
               <div className="flex flex-col gap-1 ml-4">
                 <div className="flex items-center gap-2">
@@ -244,20 +289,16 @@ const SignUp = () => {
               </div>
 
               <div className="flex justify-center mt-4">
-                {
-                  isLoading ?
-
-                  ( <Loader/>):
-                 
-                  (
-                    <button
+                {isLoading ? (
+                  <Loader />
+                ) : (
+                  <button
                     type="submit"
                     className="ripple !w-[150px] !h-[44px] !rounded-[8px]"
                   >
                     Sign up
                   </button>
-                  )
-                }
+                )}
               </div>
 
               <div className="flex justify-center mt-1 font-Inter font-bold text-[16px] text-[#696969]">

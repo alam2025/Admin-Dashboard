@@ -17,7 +17,7 @@ const Root = () => {
   return (
     <div
       style={{ backgroundImage: `url(${activeBgImage})` }}
-      className={`min-h-screen max-h-screen  overflow-x-hidden overflow-y-hidden relative   bg-cover bg-center bg-no-repeat `}
+      className={`min-h-screen max-h-screen overflow-x-hidden overflow-y-hidden relative   bg-cover bg-center bg-no-repeat `}
     >
       <Navbar />
 
@@ -25,7 +25,7 @@ const Root = () => {
         {/* Navbar */}
         {/* Main Content */}
         <div className=" h-[850px] max-w-full relative    object-center">
-          <div className=" flex   items-center h-[100%] w-[100%] px-14">
+          <div className=" flex   items-center h-[100%] w-[100%] 2xl:px-14 xl:px-3">
             <Sidebar />
             <div className=" h-[100%] w-[100%] flex  gap-4 ">
              
@@ -33,7 +33,7 @@ const Root = () => {
               {close && (
                 <div
                   onClick={() => setClose(false)}
-                  className="absolute bg-[#4340C2] rounded-l-full cursor-pointer flex justify-center items-center h-10 w-16  rounded-lg right-0 top-[16px] animate__animated animate__fadeIn animate__slow animate__slow "
+                  className="absolute bg-[#4340C2] rounded-l-full cursor-pointer flex justify-center items-center h-10 w-16  rounded-lg right-0 top-[16px] z-50 animate__animated animate__fadeIn animate__slow animate__slow "
                 >
                   <AiOutlineSetting className="text-2xl text-white rotating " />
                 </div>
@@ -46,10 +46,10 @@ const Root = () => {
               <div
                 className={`w-[100%] grid transition-all ease-linear duration-700  z-10`}
               >
-                {pathname === "/" && <Home />}
+                {pathname === "/powerhouse" && <Home />}
 
                 <div className="h-[850px] flex   items-center !ml-[-74px]">
-                  {pathname !== "/" && <Outlet />}
+                  {pathname !== "/powerhouse" && <Outlet />}
                 </div>
               </div>
             </div>
