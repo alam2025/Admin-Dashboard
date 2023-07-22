@@ -50,12 +50,14 @@ class HomeWidget extends React.Component {
     
 
     return (
-      <div className="2xl:w-[850px] lg:w-[750px] h-[450px] 2xl:left-[530px] lg:left-[340px] lg:top-[60px]  2xl:top-[194px] rounded-lg  absolute z-0 shadow-sm  flex flex-col  items-center p-6 gap-9 bg-glass">
-        <div className="w-4/4 mt-12">
+      <div className="w-[100%] h-[450px] left-[12%] md:left-[15%] lg:left-[14%] rounded-lg  z-0 shadow-sm  flex flex-col  items-center p-6 gap-9 bg-glass  ">
+        <div className="w-4/4 mt-12  ">
           <Clock
             secondRatio={secondRatio}
             minuteRatio={minuteRatio}
             hourRatio={hourRatio}
+           
+  
           />
         </div>
         <div className="w-3/4  grid gap-4 grid-cols-2">

@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Navbar from "../components/Navbar/Navbar";
 import ThemeSidebar from "../components/ThemeSidebar/ThemeSidebar";
@@ -14,51 +14,61 @@ const Root = () => {
   const containerOpen = useSelector((state) => state.homeDisplay.containerOpen);
   const activeBgImage = useSelector((state) => state.bgImage.activeBgImage);
   let { pathname } = useLocation();
+
+  const handlePage=()=>{
+    console.log('sdhfj');
+  }
   return (
     <div
       style={{ backgroundImage: `url(${activeBgImage})` }}
-      className={`min-h-screen max-h-screen overflow-x-hidden overflow-y-hidden relative   bg-cover bg-center bg-no-repeat `}
+      className={`flex flex-col min-h-screen max-h-screen overflow-x-hidden relative   bg-cover bg-center bg-no-repeat  `}
     >
       <Navbar />
 
-      <div className="max-w-[1920px] mx-auto">
-        {/* Navbar */}
-        {/* Main Content */}
-        <div className=" h-[850px] max-w-full relative    object-center">
-          <div className=" flex   items-center h-[100%] w-[100%] 2xl:px-14 xl:px-3">
+        <div className=" ">
+          <div className=" flex justify-between gap-10 md:24 lg:gap-28  mt-16">
             <Sidebar />
-            <div className=" h-[100%] w-[100%] flex  gap-4 ">
-             
 
+            <div className=" w-[100%] mb-16 ">
+              
+              <Outlet />
+
+              {/* <div>
+                {
+                  !containerOpen && <HomeWidget />
+                }
+              </div>
+
+
+
+              
+               <div
+                  className={`w-[100%] grid transition-all ease-linear duration-700  z-10`}
+                >
+                  {pathname === "/powerhouse" && <Home />}
+
+                  <div className="flex   items-center !ml-[-74px]">
+                    {pathname !== "/powerhouse" && <Outlet />}
+                  </div>
+                </div> */}
+              
+            </div>
+
+            <div className={`${!close && 'mr-16'}`}>
               {close && (
                 <div
                   onClick={() => setClose(false)}
-                  className="absolute bg-[#4340C2] rounded-l-full cursor-pointer flex justify-center items-center h-10 w-16  rounded-lg right-0 top-[16px] z-50 animate__animated animate__fadeIn animate__slow animate__slow "
+                  className=" bg-[#4340C2] rounded-l-full cursor-pointer flex justify-center items-center h-10 w-16  rounded-lg animate__animated animate__fadeIn animate__slow animate__slow"
                 >
-                  <AiOutlineSetting className="text-2xl text-white rotating " />
+                  <Link> <AiOutlineSetting className="text-2xl text-white rotating " /></Link>
                 </div>
               )}
-              {
-                !containerOpen && <HomeWidget/>
-              }
-              
-              
-              <div
-                className={`w-[100%] grid transition-all ease-linear duration-700  z-10`}
-              >
-                {pathname === "/powerhouse" && <Home />}
-
-                <div className="h-[850px] flex   items-center !ml-[-74px]">
-                  {pathname !== "/powerhouse" && <Outlet />}
-                </div>
-              </div>
             </div>
 
             <ThemeSidebar utils={{ setClose, close }} />
           </div>
         </div>
-        <div></div>
-      </div>
+       
       {/* Footer */}
       <Footer />
     </div>

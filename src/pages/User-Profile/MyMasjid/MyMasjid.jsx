@@ -7,10 +7,10 @@ import LiveMyMasjidList from "./UserMyMasjidLivePreview/LiveMyMasjidList";
 const MyMasjid = () => {
   const { pathname } = useLocation();
   return (
-    <div className="w-[1442px] h-[736px] rounded-[20px] mx-auto my-auto bg-[#FFFFFF]  p-20">
+    <div className=" rounded-[20px] mx-auto my-auto bg-[#FFFFFF]  p-20">
       <div className="flex items-center justify-center">
         <div className=" flex gap-16  rounded-[12px] ">
-          <div className=" w-[756px]  h-[582px] px-14 py-10 rounded-lg content-bg">
+          <div className=" w-[100%] lg:w-[60%] px-14 py-10 rounded-lg content-bg">
             <Tabs >
               <TabList display="flex" justifyContent="space-between">
                 <Tab color="#3385F0" paddingX="0">
@@ -38,7 +38,7 @@ const MyMasjid = () => {
             </Tabs>
           </div>
 
-          <div className="w-[343px]  h-[582px] grid items-center rounded-[12px] overflow-hidden content-bg relative">
+          <div className="w-[100%] lg:w-[40%] grid items-center rounded-[12px] overflow-hidden content-bg relative">
             <UserLivePreview>
               {
                 pathname === "/powerhouse/user-my-masjid" ? <LiveMyMasjidDetails/> : <LiveMyMasjidList/>

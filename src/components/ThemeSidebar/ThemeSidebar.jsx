@@ -48,11 +48,11 @@ const ThemeSidebar = ({ utils }) => {
     <div
       className={`${
         close
-          ? `${showDefault}` // Apply the fadeOutRight animation class when closing
-          : "animate__fadeInRight" // Apply the fadeInRight animation class when opening
-      } animate__animated  content-bg transition-all font-Inter ease-out duration-700 bg-white px-6 ${
-        pathname === "/powerhouse" ? "h-[770px] xl:mt-[-12px]" : "h-[736px] xl:mt-[-95px] 2xl:mt-0"
-      } absolute 2xl:right-10 xl:right-0 2xl:w-[230px] xl:w-[190px] shadow-lg rounded-l-[20px] custom-z `}
+          ? `${showDefault} ` // Apply the fadeOutRight animation class when closing
+          : "animate__fadeInRight " // Apply the fadeInRight animation class when opening
+      } animate__animated   content-bg transition-all font-Inter ease-out duration-700 bg-white px-6 ${
+        pathname === "/powerhouse" ? " xl:mt-[-12px]" : " xl:mt-[-95px] 2xl:mt-0"
+      } absolute 2xl:right-10 right-0 2xl:w-[230px] xl:w-[190px] shadow-lg rounded-l-[20px] custom-z `}
     >
       {/* Component Header */}
       <div className="mt-4 flex gap-2">

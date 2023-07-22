@@ -15,10 +15,10 @@ const Navbar = () => {
 },[pathname])
   return (
     <div className="bg-white  w-full">
-      <div className="2xl:h-[72px] lg:h-[52px] 2xl:px-[36px] lg:px-[6px] max-w-[1920px] mx-auto">
-        <div className="flex justify-between items-center 2xl:h-[80px] lg:h-[52px]">
+      <div className=" 2xl:px-[36px] lg:px-[6px] max-w-[1920px] mx-auto">
+        <div className="flex justify-between items-center ">
           <Link className='block' to='/powerhouse'>
-            <img className="block w-[230px] 2xl:-ml-10 xl:ml-[-56px]" src={logo} alt=""/>
+            <img className="block w-[230px] h-[120px] lg:h-[100px] 2xl:-ml-10 xl:ml-[-56px]" src={logo} alt=""/>
           </Link>
          
           <div className="flex gap-4 items-center">

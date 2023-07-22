@@ -21,34 +21,36 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const isHomeDisplayOpen = useSelector((state) => state.homeDisplay.isOpen);
   const containerOpen = useSelector((state) => state.homeDisplay.containerOpen);
-  
+
   const handleClick = () => {
     dispatch(toggleIsOpen(!isHomeDisplayOpen));
     dispatch(toggleContainerOpen(!containerOpen));
   };
-  
-  const userinformation = useSelector((state) => state?.userData?.userinfo  );
+
+  const userinformation = useSelector((state) => state?.userData?.userinfo);
 
 
   const OverlayOne = () => (
-    <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px) hue-rotate(90deg)" />
-    );
-    
-    const [overlay, setOverlay] = useState(<OverlayOne />);
+    <ModalOverlay bg="" backdropFilter="" />
+  );
+
+  const [overlay, setOverlay] = useState(<OverlayOne />);
   return (
-    <div>
-      <div className="w-[80px] max-h-[770px] 2xl:mt-[0px] xl:mt-[-280px]  z-50 transition-all ease-linear duration-1000 relative p-4 min-h-max bg-[#ffffff] border rounded-full">
+    <div className=" ">
+      <div className="   bg-[#ffffff] border rounded-full">
         <div className="flex flex-col">
           <div className="flex flex-col gap-7 items-center mt-6">
-            {pathname === "/powerhouse" && (
+            {(pathname === "/powerhouse") && (
               <>
                 <Tooltip className="!bg-[#2C80FF] " label="Menu" placement="right">
-                  <img
-                    onClick={handleClick}
-                    className="2xl:w-36 xl:w-[36px] cursor-pointer duration-500 rounded "
-                    src={menu}
-                    alt=""
-                  />
+                  <Link onClick={handleClick} to='/powerhouse/home'>
+                    <img
+
+                      className="2xl:w-36 xl:w-[36px] cursor-pointer duration-500 rounded "
+                      src={menu}
+                      alt=""
+                    />
+                  </Link>
                 </Tooltip>
 
                 <Tooltip className="!bg-[#2C80FF]" label="Manage Post" placement="right">
@@ -63,74 +65,70 @@ const Sidebar = () => {
                 </Tooltip>
               </>
             )}
+            {
+              userinformation?.is_creator === true ? (
+                <>
+                  <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
+                    <Link className="transition-all ease-linear duration-1000" to="/powerhouse/admin-profile">
+                      <img className="2xl:w-36 xl:w-[36px]" src={user} alt="" />
+                    </Link>
+                  </Tooltip>
 
+                  {(pathname !== "/powerhouse") && (
+                    <>
+                      <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
+                        <Link to="/powerhouse/create-masjid">
+                          <img className="2xl:w-36 xl:w-[36px]" src={mosque} alt="" />
+                        </Link>
+                      </Tooltip>
+                      <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
+                        <Link to="/powerhouse/create-favorites">
+                          <img className="2xl:w-36 xl:w-[36px]" src={favourite} alt="" />
+                        </Link>
+                      </Tooltip>
+                      <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
+                        <Link to="/powerhouse/admin-settings">
+                          <img className="2xl:w-36 xl:w-[36px]" src={settings} alt="" />
+                        </Link>
+                      </Tooltip>
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
+                  <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
+                    <Link className="transition-all ease-linear duration-1000" to="/powerhouse/user-profile">
+                      <img className="2xl:w-36 xl:w-[36px]" src={user} alt="" />
+                    </Link>
+                  </Tooltip>
 
-             
-
-{
-  userinformation?.is_creator === true ? (
-    <>
-      <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
-        <Link className="transition-all ease-linear duration-1000" to="/powerhouse/admin-profile">
-          <img className="2xl:w-36 xl:w-[36px]" src={user} alt="" />
-        </Link>
-      </Tooltip>
-
-      {pathname !== "/powerhouse" && (
-        <>
-          <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
-            <Link to="/powerhouse/create-masjid">
-              <img className="2xl:w-36 xl:w-[36px]" src={mosque} alt="" />
-            </Link>
-          </Tooltip>
-          <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
-            <Link to="/powerhouse/create-favorites">
-              <img className="2xl:w-36 xl:w-[36px]" src={favourite} alt="" />
-            </Link>
-          </Tooltip>
-          <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
-            <Link to="/powerhouse/admin-settings">
-              <img className="2xl:w-36 xl:w-[36px]" src={settings} alt="" />
-            </Link>
-          </Tooltip>
-        </>
-      )}
-    </>
-  ) : (
-    <>
-      <Tooltip className="!bg-[#2C80FF]" label="Profile" placement="right">
-        <Link className="transition-all ease-linear duration-1000" to="/powerhouse/user-profile">
-          <img className="2xl:w-36 xl:w-[36px]" src={user} alt="" />
-        </Link>
-      </Tooltip>
-
-      {pathname !== "/powerhouse" && (
-        <>
-          <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
-            <Link to="/powerhouse/user-my-masjid">
-              <img className="2xl:w-36 xl:w-[36px]" src={mosque} alt="" />
-            </Link>
-          </Tooltip>
-          <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
-            <Link to="/powerhouse/user-create-favorites">
-              <img className="2xl:w-36 xl:w-[36px]" src={favourite} alt="" />
-            </Link>
-          </Tooltip> 
-          <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
-            <Link to="/powerhouse/user-notifications">
-              <img className="2xl:w-36 xl:w-[36px]" src={belIcon} alt="" />
-            </Link>
-          </Tooltip>
-          <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
-            <Link to="/powerhouse/user-settings">
-              <img className="2xl:w-36 xl:w-[30px]" src={settings} alt="" />
-            </Link>
-          </Tooltip>
-        </>
-      )}
-    </>
-  )
-}
+                  {(pathname !== "/powerhouse") && (
+                    <>
+                      <Tooltip className="!bg-[#2C80FF]" label="Masjid" placement="right">
+                        <Link to="/powerhouse/user-my-masjid">
+                          <img className="2xl:w-36 xl:w-[36px]" src={mosque} alt="" />
+                        </Link>
+                      </Tooltip>
+                      <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
+                        <Link to="/powerhouse/user-create-favorites">
+                          <img className="2xl:w-36 xl:w-[36px]" src={favourite} alt="" />
+                        </Link>
+                      </Tooltip>
+                      <Tooltip className="!bg-[#2C80FF]" label="Favorites" placement="right">
+                        <Link to="/powerhouse/user-notifications">
+                          <img className="2xl:w-36 xl:w-[36px]" src={belIcon} alt="" />
+                        </Link>
+                      </Tooltip>
+                      <Tooltip className="!bg-[#2C80FF]" label="Settings" placement="right">
+                        <Link to="/powerhouse/user-settings">
+                          <img className="2xl:w-36 xl:w-[30px]" src={settings} alt="" />
+                        </Link>
+                      </Tooltip>
+                    </>
+                  )}
+                </>
+              )
+            }
 
 
 
@@ -138,30 +136,31 @@ const Sidebar = () => {
               <div className="relative">
                 <Tooltip className="!bg-[#2C80FF]" label="Add" placement="right">
                   <img
-                   
+
                     className="2xl:w-36 xl:w-[36px] cursor-pointer"
                     src={plus}
                     alt=""
                   />
                 </Tooltip>
                 {/* More Menu Modal */}
-               
+
               </div>
             )}
+            <Tooltip className="!bg-[#2C80FF]" label="Logout" placement="right">
+              <div className=" w-11 flex justify-center  cursor-pointer">
+                <img
+                  onClick={() => {
+                    setOverlay(<OverlayOne />);
+                    onOpen();
+                  }}
+                  className="flex items-center justify-center 2xl:w-30 xl:w-[30px] xl:ml-1 2xl:ml-0"
+                  src={logout}
+                  alt=""
+                />
+              </div>
+            </Tooltip>
           </div>
-          <Tooltip className="!bg-[#2C80FF]" label="Logout" placement="right">
-            <div className=" w-11 mt-20  cursor-pointer">
-              <img
-                onClick={() => {
-                  setOverlay(<OverlayOne />);
-                  onOpen();
-                }}
-                className="2xl:w-36 xl:w-[36px] xl:ml-1 2xl:ml-0"
-                src={logout}
-                alt=""
-              />
-            </div>
-          </Tooltip>
+
         </div>
         <LogoutModal action={{ onClose, isOpen, overlay: overlay }} />
       </div>

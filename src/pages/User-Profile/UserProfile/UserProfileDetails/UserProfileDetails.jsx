@@ -31,7 +31,7 @@ const UserProfileDetails = () => {
       </div>
 
       <form className="py-3 mt-4 flex flex-col gap-y-6">
-        <div className="flex gap-x-16 ">
+        <div className="flex flex-col gap-x-16 ">
           <div className="flex flex-col gap-2 ">
             <span className="text-[#696969] font-Inter text-[16px] font-normal">
               Full Name
@@ -39,7 +39,7 @@ const UserProfileDetails = () => {
 
             <input
               type="text"
-              className="w-[288px] h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+              className=" h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
             />
           </div>
           <div className="flex flex-col gap-2 ">
@@ -49,11 +49,11 @@ const UserProfileDetails = () => {
             <input
               type="email"
               name="email"
-              className="w-[288px] h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+              className=" h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
             />
           </div>
         </div>
-        <div className="flex gap-x-16 ">
+        <div className="flex flex-col gap-x-16 ">
           <div className="flex flex-col gap-2 ">
             <span className="text-[#696969] font-Inter text-[16px] font-normal">
               Phone
@@ -61,7 +61,7 @@ const UserProfileDetails = () => {
             <input
               type="text"
               name="phone"
-              className="w-[288px] h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+              className=" h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
             />
           </div>
           <div className="flex flex-col gap-2 ">
@@ -71,7 +71,7 @@ const UserProfileDetails = () => {
             <input
               type="text"
               name="address"
-              className="w-[288px] h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
+              className=" h-[40px] pl-3 border border-white  bg-[#F4F4F4] rounded-md outline-none focus:border-[#2C80FF] focus:ring-[#2C80FF] focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-300 transition-all duration-700"
             />
           </div>
         </div>

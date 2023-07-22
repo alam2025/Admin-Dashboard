@@ -16,6 +16,7 @@ import subscribeImage from "../../assets/subscribe.svg";
 import supportImage from "../../assets/support.svg";
 import userImage from "../../assets/user.svg";
 import { Helmet } from "react-helmet-async";
+import { Link, useLocation } from "react-router-dom";
 
 const datas = [
   {
@@ -133,35 +134,39 @@ const Home = () => {
   const isHomeDisplayOpen = useSelector((state) => state?.homeDisplay?.isOpen);
   const activeBg = useSelector((state) => state?.bgColor?.activeBg);
   const dispatch = useDispatch();
+  const navigate= useLocation()
 
   const handleClick = () => {
     dispatch(toggleIsOpen(!isHomeDisplayOpen));
     dispatch(toggleContainerOpen(!containerOpen));
+    
   };
 
   return (
-    <div style={{backgroundColor : activeBg}} className={`w-[988px] ${containerOpen ? '' : 'opacity-0'} transition-all ease-linear duration-700 2xl:h-[770px] xl:h-[510px] rounded-[20px] my-auto 2xl:ml-[292px] xl:ml-[140px]  mt-[35px]  px-4 py-12 custom-shadow `}>
+    <div style={{backgroundColor : activeBg}} className={`w-[100%] mx-auto ${containerOpen ? '' : 'opacity-0'} transition-all ease-linear duration-700 rounded-[20px]    px-4  custom-shadow `}>
       <Helmet>
         <title>Ya-Sin - Home </title>
       </Helmet>
       {/* Component Header */}
       <div className="2xl:mb-12 xl:mb-6 flex items-center relative">
+        <Link to='/powerhouse'>
         <TiDelete
           onClick={handleClick}
           className="text-4xl absolute right-12 text-red-500 cursor-pointer"
         />
+        </Link>
 
-        <div className="relative max-w-max mx-auto">
+        <div className="relative  mx-auto pt-8">
           <input
             type="text"
             name=""
             id=""
-            className="border-[0.5px] border-[#A4A6B3] rounded-full w-[430px] py-[8px]  pl-5 pr-10 outline-0"
+            className="border-[0.5px] border-[#A4A6B3] md:w-[400px] rounded-full  py-[8px]  pl-5 pr-10 outline-0"
             placeholder="Type to Search"
             
           />
           <button>
-            <CiSearch className="absolute top-[7px] right-3 text-[30px]"></CiSearch>
+            <CiSearch className="absolute top-[40px] right-3 text-[30px]"></CiSearch>
           </button>
         </div>
       </div>

@@ -4,11 +4,11 @@ import { BiMinus } from "react-icons/bi";
 
 const MyMasjidList = () => {
   return (
-    <div className=" rounded-md mx-auto py-8 ">
+    <div className=" rounded-md mx-auto py-8   h-[700px] ">
       <Helmet>
         <title>Ya-Sin - My Masjid List </title>
       </Helmet>
-      <div className="overflow-y-auto absolute w-[665px] pr-14">
+      <div className="overflow-auto absolute w-[400px]  lg:w-[665px]  pr-14">
         <div className="min-h-[420px] max-h-[420px] ">
           <div className="flex flex-col gap-8 mt-2 w-[100%]  ">
             {/* ---------Card Start------------- */}

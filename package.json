@@ -19,6 +19,7 @@
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.14",
     "D": "^1.0.0",
+    "firebase": "^10.1.0",
     "framer-motion": "^10.12.12",
     "js-cookie": "^3.0.5",
     "postcss": "^8.4.23",

@@ -33,6 +33,7 @@ import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
 import ResetPassword from "../pages/ForgetPassword/ResetPassword";
 import PrivateRoute from "../AuthRoute/PrivateRoute";
 import { useEffect } from "react";
+import HomeWidget from "../components/HomeWidget/HomeWidget";
 
 const RedirectHome = () => {
   useEffect(() => {
@@ -44,14 +45,19 @@ const RedirectHome = () => {
 
 const routes = createBrowserRouter([
   {
-    path: "/powerhouse",
+    path: "powerhouse",
     element: <PrivateRoute><Root /></PrivateRoute>,
     children: [
+      
       {
-        path: "/powerhouse",
+        path:'/powerhouse',
+        element:<HomeWidget/>
+
+      },
+      {
+        path:"/powerhouse/home",
         element:<PrivateRoute> <Home /></PrivateRoute>,
       },
-      
       {
         path: "/powerhouse/admin-profile",
         element:<AdminProfile />,
